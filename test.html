@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <title>SteemJS</title>
+</head>
+<body>
+<h1>SteemJS</h1>
+
+<script type="text/javascript" src="js/steem.min.js"></script>
+
+<script type="text/javascript">
+ var server = 'wss://node.steem.ws';
+ var ws = new WebSocketWrapper(server);
+ ws.connect().then(function(response) {
+   var steem = new SteemWrapper(ws);
+   steem.send('get_dynamic_global_properties',[], function(response) {
+     console.log(JSON.stringify(response));
+   });
+ });
+</script>
+
+</body>
+
+</html>

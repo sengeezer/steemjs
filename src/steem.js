@@ -1,5 +1,4 @@
-var SteemWrapper;
-SteemWrapper = (function() {
+var SteemWrapper = (function() {
   var steem = SteemWrapper.prototype;
 
   function SteemWrapper(ws) {

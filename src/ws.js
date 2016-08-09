@@ -1,5 +1,4 @@
-var WebSocketWrapper;
-WebSocketWrapper = (function() {
+var WebSocketWrapper = (function() {
   var ws = WebSocketWrapper.prototype;
 
   function WebSocketWrapper(server) {
@@ -10,7 +9,7 @@ WebSocketWrapper = (function() {
 
   ws.connect = function() {
     var that = this;
-    
+
     return new Promise(function(resolve, reject) {
       if('WebSocket' in window) {
         that.connection = new WebSocket(that.server);
@@ -25,7 +24,7 @@ WebSocketWrapper = (function() {
           that.callbacks[sdata['id']](sdata['result']);
         };
       } else {
-        reject(Error('Your browser is too old, please get a recent one!'));
+        reject(Error('Your browser is too old, get Chrome!'));
       }
     });
   }
